@@ -15,19 +15,19 @@ bonus = int(input('Bonus do teste de ataque: '))
 margem = int(input('Qual o menor valor para crítico? '))
 multiplicador = int(input('Qual o seu múltiplicador de crítico? '))
 n = int(input('Quantos testes quer fazer? '))
-
+ataque = 0
+dano = 0
 #teste de ataque
 for a in range(1,n+1):
-    ataque = randint(1,21)
+    ataque = randint(20,21)
 #dano
     if ataque >= margem:
         for b in range(1, quantidade + multiplicador + 1):
-            danoc = randint(1,dados+1)+modificador
-            danoc += danoc
+            dano = randint(1,dados+1)+modificador
     else:
         for b in range(1, quantidade+1):
             dano = randint(1, dados+1)+modificador
-            dano  += dano
-print(f'Sua média de dano é {dano+danoc}\nE sua média de ataque é {(ataque)+bonus}')
-#não lembro se ao colocar ao fazer uma variável receber um laço o valor mostrado é a média ou o íltimo valor que a variável recebeu,
-#logo é provavel que esteja incorreto
+        ataque += ataque
+        dano += dano
+print(f'Sua média de dano é {dano}\nE sua média de ataque é {(ataque)+bonus}')
+#usando laço for com um contador zerado no inicio para somar os valores de ataque e de dano para no fim fazer a média deles, testes do dia 02/02/2023, mas os valores ainda não fecham, novos testes serão feitos
