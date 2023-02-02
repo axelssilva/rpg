@@ -50,3 +50,4 @@ print('===========================')
 
 # o scrip está funcionando utilizando laço while porém de maneira pouco otimizada aninhando o script com laços for
 # a um laço while e consequentemente ocupando memória desnecessária. 02/02/2023
+
