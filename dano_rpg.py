@@ -27,7 +27,7 @@ for a in range(1,n+1):
     else:
         for b in range(1, quantidade+1):
             dano = randint(1, dados+1)+modificador
-        ataque += ataque
-        dano += dano
+        ataque += a
+        dano += b
 print(f'Sua média de dano é {dano}\nE sua média de ataque é {(ataque)+bonus}')
 #usando laço for com um contador zerado no inicio para somar os valores de ataque e de dano para no fim fazer a média deles, testes do dia 02/02/2023, mas os valores ainda não fecham, novos testes serão feitos
