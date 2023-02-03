@@ -46,4 +46,5 @@ repetir? [s/n] ''').upper().strip()
     if resposta in 'Nn':
         break
 print('Obrigado, até mais!')
+
 # script funcional 03/02/2023
