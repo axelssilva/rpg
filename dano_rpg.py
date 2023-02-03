@@ -8,8 +8,6 @@
 #  n - a quantidade de vezes em que sera testado
 
 #  módulos utilizados:
-
-
 from random import randint
 from math import floor
 
@@ -26,8 +24,7 @@ while resposta in 'Ss':
     rold = randint(1, dado)
 
 #  contadores:
-    totald = 0
-    ataque = 0
+    totald = ataque = 0
 
 #  script:
     for t in range(1, n+1):
@@ -37,7 +34,7 @@ while resposta in 'Ss':
                 dano = randint(1, dado)
                 totald += dano
         else:
-            for d in range(1, quantidaded):
+            for d in range(1, quantidaded+1):
                 dano = randint(1, dado)
                 totald += dano
         ataque += rol
@@ -50,4 +47,3 @@ print('===========================')
 
 # o scrip está funcionando utilizando laço while porém de maneira pouco otimizada aninhando o script com laços for
 # a um laço while e consequentemente ocupando memória desnecessária. 02/02/2023
-
