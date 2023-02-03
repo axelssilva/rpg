@@ -11,8 +11,8 @@
 from random import randint
 from math import floor
 
-resposta = 'S'
-while resposta in 'Ss':
+
+while True:
 #  variáveis:
     dado = int(input('Qual o tipo de dado? '))
     quantidaded = int(input('Quantos dados são? '))
@@ -43,7 +43,8 @@ A sua média de ataque é {floor((ataque/n)+moda)}
 A sua média de dano é {floor((totald/n)+vantagem)}
 ===========================
 repetir? [s/n] ''').upper()
-print('===========================')
-
-# o scrip está funcionando utilizando laço while porém de maneira pouco otimizada aninhando o script com laços for
-# a um laço while e consequentemente ocupando memória desnecessária. 02/02/2023
+    print('===========================')
+    if resposta in 'Nn':
+        break
+print('Obrigado, até mais!')
+# script funcional 03/02/2023
