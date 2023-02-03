@@ -21,7 +21,6 @@ while True:
     margem = int(input('Qual sua margem para crítico? '))
     multiplicador = int(input('Qual o seu multiplicador de crítico? '))
     n = int(input('Quantas vezes quer testar? '))
-    rold = randint(1, dado)
 
 #  contadores:
     totald = ataque = 0
@@ -42,7 +41,7 @@ while True:
 A sua média de ataque é {floor((ataque/n)+moda)}
 A sua média de dano é {floor((totald/n)+vantagem)}
 ===========================
-repetir? [s/n] ''').upper()
+repetir? [s/n] ''').upper().strip()
     print('===========================')
     if resposta in 'Nn':
         break
