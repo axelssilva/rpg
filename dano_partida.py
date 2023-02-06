@@ -10,7 +10,9 @@
 from random import randint
 
 # defs utilizadas:
-def parâmetros():
+
+
+def parametros():
     global dado, quantidaded, moda, vantagem, margem, multiplicador
     dado = int(input('Qual o tipo de dado? '))
     quantidaded = int(input('Quantos dados são? '))
@@ -21,10 +23,13 @@ def parâmetros():
 
 
 def roll():
-    global totald, rol
+    global totald, ro
     totald = 0
-    rol = randint(1, 20)
-    if rol >= margem:
+    ro = randint(1, 20)
+    if ro < (ac + moda):
+        print('Seu ataque não acertou!')
+        linha()
+    if ro >= margem:
         for d in range(1, (quantidaded * multiplicador) + 1):
             dano = randint(1, dado)
             totald += dano
@@ -33,26 +38,43 @@ def roll():
             dano = randint(1, dado)
             totald += dano
 
-#script principal:
-dado = quantidaded = moda = vantagem = margem = multiplicador = resp = totald = 0
-parâmetros()
+
+def acerto():
+    global ac
+    ac = int(input('Qual a defesa do seu oponente? '))
+
+
+def linha():
+    print('=-=' * 15)
+
+# script principal:
+
+
+dado = quantidaded = moda = vantagem = margem = multiplicador = resp = totald = ac = ro = 0
+parametros()
+acerto()
 while True:
-    print('=-=' * 30)
+    linha()
     resp = int(input('''Selecione uma opção:
         [1] Rolar ataque
         [2] Redefinir valores
+        [3] Redefinir defesa
         [0] Sair do programa
         Sua decisão: '''))
-    print('=-='*30)
+    linha()
     if resp == 1:
         roll()
-        print(f'Seu roll puro foi {rol}\nSeu ataque foi {rol+moda}\nSeu dano puro foi {totald}\nSeu dano foi {totald+vantagem}')
+        print(f'''Seu roll puro foi {ro}
+        Seu ataque foi {ro+moda}
+        Seu dano puro foi {totald}Seu dano foi {totald+vantagem}''')
     elif resp == 2:
-        parâmetros()
+        parametros()
+    elif resp == 3:
+        acerto()
     elif resp == 0:
         print('Até mais!')
         break
     else:
         print('comando incorreto, tente novamente!')
 
-#sacript funcional utilizandos defs 05/02/2023
+# sacript funcional utilizandos defs 06/02/2023
