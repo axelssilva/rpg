@@ -77,4 +77,4 @@ while True:
     else:
         print('comando incorreto, tente novamente!')
 
-# sacript funcional utilizandos defs 06/02/2023
+# script funcional utilizandos defs 06/02/2023
